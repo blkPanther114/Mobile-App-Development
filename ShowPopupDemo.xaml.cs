@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
-
-//https://github.com/rotorgames/Rg.Plugins.Popup/wiki/Getting-started
 
 namespace PopupApp
 {
-    public partial class MainPage : ContentPage
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class ShowPopupDemo : PopupPage
     {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+		public ShowPopupDemo ()
+		{
+			InitializeComponent ();
+		}
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new ShowPopupDemo());
+            await PopupNavigation.Instance.PopAsync(true);
         }
     }
 }

@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:NavTest"
-             x:Class="NavTest.MainPage">
+             xmlns:local="clr-namespace:PopupApp"
+             x:Class="PopupApp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="Start" />
-
-
-        <Button x:Name="btnNext" Text="Next" Clicked="btnNext_Clicked"></Button>
-        <Entry x:Name="txtFirstName"></Entry>
-        <Entry x:Name="txtLastName"></Entry>
+        <Label Text="Mobile App" Font="Bold,24"  
+                VerticalOptions="CenterAndExpand"   
+                HorizontalOptions="CenterAndExpand" />
+        <Button VerticalOptions="StartAndExpand"   
+                HorizontalOptions="CenterAndExpand"   
+                    Text="Login"  
+                    Font="Bold,20"  
+                    Clicked="Button_Clicked"  
+                    BackgroundColor="Aqua"/>
     </StackLayout>
 
 </ContentPage>
