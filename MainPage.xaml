@@ -1,19 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:NavTest"
-             x:Class="NavTest.MainPage">
+             xmlns:local="clr-namespace:CustomerApp"
+             x:Class="CustomerApp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="Start" />
-
-
-        <Button x:Name="btnNext" Text="Next" Clicked="btnNext_Clicked"></Button>
-        <Entry x:Name="txtFirstName"></Entry>
-        <Entry x:Name="txtLastName"></Entry>
+        <Label Text="Customer List"  FontFamily="Arial" FontSize="Medium" TextColor="RoyalBlue"
+           HorizontalOptions="Center" VerticalOptions="Start" />
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="txtSearchBox" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+            <Button x:Name="btnSearch" Text="Search"  HorizontalOptions="End" VerticalOptions="Center" Clicked="btnSearch_Clicked"></Button>
+        </StackLayout>
+        <ListView x:Name="lstCustomerList" ItemSelected="lstCustomerList_ItemSelected" ItemTapped="lstCustomerList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <Image Source="{Binding ImageName}" HorizontalOptions="Start" AbsoluteLayout.LayoutBounds="0, 0, 600, 50 " Aspect="AspectFill"/>
+                            <StackLayout BackgroundColor="#eee" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                                <Label Text = "{Binding Name}" FontSize="14" TextColor="#f35e20" AbsoluteLayout.LayoutBounds="100, 0.25, 400, 40"/>
+                                <Label Text = "{Binding Address}" FontSize="10" TextColor="Blue" AbsoluteLayout.LayoutBounds="100, 35, 200, 25"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnAdd" Text="Add" HorizontalOptions="Center" TextColor="Chocolate" BackgroundColor="Blue" Clicked="btnAdd_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>

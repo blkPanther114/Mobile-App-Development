@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomerApp.CustomerDetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Customer Details!" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" 
+                   TextColor="Blue"/>
+            <TableView x:Name="tblCustomerDetails" IsVisible="True">
+                <TableRoot>
+                    <TableSection Title="Information">
+                        <EntryCell Text="{Binding Name, Mode=TwoWay}" Placeholder="Name"   />
+                        <EntryCell Text="{Binding Address, Mode=TwoWay}" Placeholder="Address" />
+                        <ImageCell Text="Image" Detail="Profile" ImageSource="{Binding ImageName}" x:Name="imgCell"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button x:Name="btnSave" Text="Save" TextColor="Chocolate" Clicked="btnSave_Clicked"></Button>
+            <Button x:Name="btnCancel" Text="Cancel" TextColor="Red" Clicked="btnCancel_Clicked"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

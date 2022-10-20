@@ -3,15 +3,18 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace NavTest
+namespace CustomerApp
 {
     public partial class App : Application
     {
+        public Customer ActiveCustomer;
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+            
         }
 
         protected override void OnStart()
